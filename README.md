@@ -18,9 +18,15 @@ This repository is already configured for GitHub Pages through GitHub Actions.
 
 The workflow in `.github/workflows/deploy-pages.yml` will publish the app automatically.
 
+## Solver dependency
+
+The app loads `cubejs@1.3.2` from UNPKG in the browser:
+
+- `https://unpkg.com/cubejs@1.3.2/lib/cube.js`
+- `https://unpkg.com/cubejs@1.3.2/lib/solve.js`
+
 ## Files used in production
 
 - `index.html`
 - `style.css`
 - `app.js`
-- `vendor/cubejs`
