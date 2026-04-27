@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "cubejs": "^1.3.2",
+    "vite": "^8.0.10"
+  }
+}

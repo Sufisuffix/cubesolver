@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cube Coach</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero__copy">
+          <p class="eyebrow">Rubik's Cube Helper</p>
+          <h1>Enter your cube, then follow each solving move at your own pace.</h1>
+          <p class="hero__text">
+            Paint the stickers to match your cube. When you submit, the app finds a solution and
+            shows an animated walkthrough with autoplay and a true step-by-step button.
+          </p>
+        </div>
+        <div class="hero__card">
+          <p class="hero__label">How to enter your cube</p>
+          <ol class="hero__steps">
+            <li>Pick one front face and keep the cube orientation consistent.</li>
+            <li>Fill in the Up, Right, Front, Down, Left, and Back faces.</li>
+            <li>Use Step by step if you want to advance one move at a time.</li>
+          </ol>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <section class="panel">
+          <div class="panel__header">
+            <div>
+              <p class="panel__eyebrow">1. Cube Entry</p>
+              <h2>Paint the current sticker colors</h2>
+            </div>
+            <div class="panel__actions">
+              <button id="demo-button" class="button button--ghost" type="button">Load demo scramble</button>
+              <button id="reset-button" class="button button--ghost" type="button">Reset board</button>
+            </div>
+          </div>
+
+          <div class="tool-row">
+            <div>
+              <p class="section-label">Selected color</p>
+              <div id="palette" class="palette" aria-label="Color palette"></div>
+            </div>
+            <div>
+              <p class="section-label">Color counts</p>
+              <div id="counts" class="counts"></div>
+            </div>
+          </div>
+
+          <div id="entry-net" class="cube-net cube-net--entry" aria-label="Cube entry grid"></div>
+
+          <div class="submit-row">
+            <div id="status-banner" class="status-banner status-banner--info" role="status">
+              Fill all 54 stickers, then submit to generate the solving steps.
+            </div>
+            <button id="solve-button" class="button button--primary" type="button">Submit cube</button>
+          </div>
+        </section>
+
+        <section class="panel panel--solution">
+          <div class="panel__header">
+            <div>
+              <p class="panel__eyebrow">2. Animated Solution</p>
+              <h2>Follow the solve without getting rushed</h2>
+            </div>
+          </div>
+
+          <div id="solution-summary" class="summary-card">
+            <p class="summary-card__title">Waiting for a cube</p>
+            <p class="summary-card__text">
+              Once you submit a valid sticker layout, the solution and playback controls will appear
+              here.
+            </p>
+          </div>
+
+          <div id="viewer" class="viewer viewer--empty">
+            <div id="solution-net" class="cube-net cube-net--viewer" aria-label="Solution viewer"></div>
+          </div>
+
+          <div class="controls">
+            <button id="prev-button" class="button button--ghost" type="button" disabled>Back one step</button>
+            <button id="step-button" class="button button--primary" type="button" disabled>Step by step</button>
+            <button id="play-button" class="button button--ghost" type="button" disabled>Play animation</button>
+            <button id="restart-button" class="button button--ghost" type="button" disabled>Restart</button>
+          </div>
+
+          <div class="step-info">
+            <div>
+              <p class="section-label">Current move</p>
+              <h3 id="move-title">No move yet</h3>
+            </div>
+            <p id="move-description" class="step-info__text">
+              Submit a cube to see each move explained here.
+            </p>
+          </div>
+
+          <div id="step-list" class="step-list" aria-live="polite"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="vendor/cubejs/cube.js"></script>
+    <script src="vendor/cubejs/solve.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
