@@ -68,10 +68,8 @@ input {
 .hero__card {
   padding: 1.5rem;
   border-radius: 1.6rem;
-  background:
-    linear-gradient(135deg, rgba(15, 118, 110, 0.9), rgba(8, 83, 78, 0.92)),
-    rgba(0, 0, 0, 0.1);
-  color: #f7fffc;
+  background: linear-gradient(180deg, rgba(255, 250, 240, 0.96), rgba(247, 238, 222, 0.92));
+  color: var(--ink);
 }
 
 .eyebrow,
@@ -118,6 +116,15 @@ input {
   padding-left: 1.2rem;
   display: grid;
   gap: 0.75rem;
+}
+
+.hero__label {
+  color: var(--accent-strong);
+  font-weight: 700;
+}
+
+.hero__steps li {
+  color: var(--ink);
 }
 
 .workspace {
