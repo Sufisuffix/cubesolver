@@ -20,13 +20,11 @@ The workflow in `.github/workflows/deploy-pages.yml` will publish the app automa
 
 ## Solver dependency
 
-The app loads `cubejs@1.3.2` from UNPKG in the browser:
-
-- `https://unpkg.com/cubejs@1.3.2/lib/cube.js`
-- `https://unpkg.com/cubejs@1.3.2/lib/solve.js`
+The app ships with a local copy of the solver under `vendor/cubejs`, so GitHub Pages does not depend on any external script CDN.
 
 ## Files used in production
 
 - `index.html`
 - `style.css`
 - `app.js`
+- `vendor/cubejs`

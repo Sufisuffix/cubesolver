@@ -31,6 +31,7 @@ jobs:
           cp index.html dist/index.html
           cp style.css dist/style.css
           cp app.js dist/app.js
+          cp -R vendor dist/vendor
           touch dist/.nojekyll
 
       - name: Configure Pages
